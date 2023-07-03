@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.input-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+ 
+.input-group-prepend > .input-group-text{
+    background-color: #ffeeff;
+}

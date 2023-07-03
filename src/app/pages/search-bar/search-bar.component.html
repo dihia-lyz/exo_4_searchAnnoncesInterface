@@ -1,0 +1,36 @@
+<h3 class="mb-4">Filtrer les annonces</h3>
+<div class="row justify-content-between">
+    <div class="col-md-3">
+        <div class="input-group">
+            <input type="text" class="form-control border-1 input-field" placeholder="titre" aria-label="Username" aria-describedby="addon-wrapping" (input)="updateTitre($event)">
+        </div>
+    </div>
+    <div class="col-md-2">
+        <input type="number" class="form-control input-field border-1" placeholder="prix min" aria-label="Username" aria-describedby="addon-wrapping" (input)="updatePrixMin($event)">
+    </div>
+    <div class="col-md-2">
+        <input type="number" class="form-control input-field border-1" placeholder="prix max" aria-label="Username" aria-describedby="addon-wrapping" (input)="updatePrixMax($event)">
+    </div>
+    <div class="col-md-2 p-0">
+        <div class="dropdown form-control w-100 p-0 " ngbDropdown>
+            <button class="btn dropdown-toggle input-field w-100  text-left d-flex justify-content-between align-items-center" 
+                    type="button" id="dropdownMenuButton" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false" 
+                    ngbDropdownToggle>
+                <span class="text-muted">{{ filter.type || 'Tout' }}</span>
+                <span class="caret "></span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ngbDropdownMenu>
+                <span ngbDropdownItem class="dropdown-item" (click)="selectType(null)" >Tout</span>
+                <span ngbDropdownItem class="dropdown-item" (click)="selectType(TypeAnnonce.EMPLOI)" >Emploi</span>
+                <span ngbDropdownItem class="dropdown-item" (click)="selectType(TypeAnnonce.IMMOBILIER)">Immobilier</span>
+                <span ngbDropdownItem class="dropdown-item" (click)="selectType(TypeAnnonce.VEHICULE)">Vehicule</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-warning w-100" (click)="getFilteredData()">Rechercher</button>
+    </div>
+</div>

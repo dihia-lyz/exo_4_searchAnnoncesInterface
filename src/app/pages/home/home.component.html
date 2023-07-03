@@ -1,0 +1,25 @@
+<div class="container p-4">
+    <app-search-bar (filteredDataEvent)="receiveFilteredData($event)"></app-search-bar>
+<br>
+<br>
+  <table class="table" *ngIf="data">
+    <thead>
+      <tr>
+        <th scope="col">Nom d'annonce</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let item of data">
+        <td>{{item.titre}}</td>
+        <td>{{item.prix}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.typeA}}</td>
+      </tr>
+    </tbody>
+</table>
+
+<div>
+       
